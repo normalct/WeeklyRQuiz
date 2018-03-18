@@ -40,12 +40,12 @@ df <-
         185,312,411,533,116,224,124,501,235,452,212,153))
 ```
 
-```{r message = FALSE, warning = FALSE, tidy = TRUE}
+```{r tidy = TRUE}
 df %>%
   ggplot(aes(x=avg.price, y=active.user, colour=class)) +
   geom_path() +
   geom_text(
-    aes(label=paste(comma(round(avg.price*active.user/10^4)),'만원')),
+    aes(label=paste(comma(round(avg.price*active.user/10^4)),'10,000 Won')),
     fontface='bold') +
   geom_text(
     aes(label=case_when(month == 1 ~ as.character(class), TRUE ~ '')), 
@@ -55,8 +55,8 @@ df %>%
     title = element_text(face='bold'),
     axis.title.y = element_text(angle=0), 
     legend.position = 'none') +
-  scale_y_continuous(labels = function(x) paste(comma(x), '명'), limits = c(0,1200)) +
-  scale_x_continuous(labels = function(x) paste(comma(x), '원'), limits = c(0,4500)) +
-  labs(title='제품군별 고객수 객단가 추이', y='고객수', x='객단가')
+  scale_y_continuous(labels = function(x) paste(comma(x), 'count'), limits = c(0,1200)) +
+  scale_x_continuous(labels = function(x) paste(comma(x), 'Won'), limits = c(0,4500)) +
+  labs(title='unit price vs number of customers trend by product group', y='number of customers', x='unit price')
 ```
 
