@@ -41,7 +41,6 @@ df <-
 ```
 
 ```{r tidy = TRUE}
-knitr::opts_chunk$set(fig.path = "images/")
   
 df %>%
   ggplot(aes(x=avg.price, y=active.user, colour=class)) +

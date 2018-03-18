@@ -96,9 +96,7 @@ df &lt;-
       c(810,852,923,862,944,994,859,845,880,836,845,648,
         885,812,911,1033,966,894,1017,1007,935,946,922,953,
         185,312,411,533,116,224,124,501,235,452,212,153))</code></pre>
-<pre class="r"><code>knitr::opts_chunk$set(fig.path = &quot;images/&quot;)
-  
-df %&gt;%
+<pre class="r"><code>df %&gt;%
   ggplot(aes(x=avg.price, y=active.user, colour=class)) +
   geom_path() +
   geom_text(
@@ -153,9 +151,6 @@ df %&gt;%
 
 
     
-<script src="/js/math-code.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
 
     
   </body>
