@@ -14,14 +14,14 @@ This is my very first WeeklyRQuiz post.
 
 [Link to WeeklyRQuiz site](https://github.com/R-Korea/weekly_R_quiz/tree/master/201803/1.path_drawing)
 
-## 필수 구현사항
+#### 필수 구현사항
 
-- 제품군별 월별 움직임을 line 으로 표기
-- 판매액 (= 고객수 * 객단가) 만원 단위로 차트 내 표기
-- 범주 (=legend) 표기 제거 후 차트 안쪽 제품군(= A,B,C) 표기
-- axis text label에 '원', '명' 등 단위 표기
+1. 제품군별 월별 움직임을 line 으로 표기
+2. 판매액 (= 고객수 * 객단가) 만원 단위로 차트 내 표기
+3. 범주 (=legend) 표기 제거 후 차트 안쪽 제품군(= A,B,C) 표기
+4. axis text label에 '원', '명' 등 단위 표기
 
-```{r}
+```{r message = FALSE, warning = FALSE, tidy = TRUE}
 library(ggplot2)
 library(scales)
 library(dplyr)
@@ -39,4 +39,5 @@ df <-
         885,812,911,1033,966,894,1017,1007,935,946,922,953,
         185,312,411,533,116,224,124,501,235,452,212,153))
 ```
+
 

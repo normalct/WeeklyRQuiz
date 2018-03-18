@@ -13,26 +13,19 @@ tags:
 
 <p>This is my very first WeeklyRQuiz post. (2018.03.week1 : path drawing. 일단 따라 해보기)</p>
 <p><a href="https://github.com/R-Korea/weekly_R_quiz/tree/master/201803/1.path_drawing">Link to WeeklyRQuiz site</a></p>
-<div id="-" class="section level2">
-<h2>필수 구현사항</h2>
-<ul>
+<div id="-" class="section level4">
+<h4>필수 구현사항</h4>
+<ol style="list-style-type: decimal">
 <li>제품군별 월별 움직임을 line 으로 표기</li>
 <li>판매액 (= 고객수 * 객단가) 만원 단위로 차트 내 표기</li>
 <li>범주 (=legend) 표기 제거 후 차트 안쪽 제품군(= A,B,C) 표기</li>
 <li>axis text label에 ‘원’, ‘명’ 등 단위 표기</li>
-</ul>
+</ol>
 <pre class="r"><code>library(ggplot2)
 library(scales)
-library(dplyr)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>df &lt;- 
+library(dplyr)
+
+df &lt;- 
   data.frame(
     month = rep(1:12, 3),
     class = rep(LETTERS[1:3], each=12),
