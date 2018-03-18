@@ -9,8 +9,8 @@ tags:
   - plot
 ---
 
-This is my very first WeeklyRQuiz post.
-(2018.03.week1 : path drawing. 일단 따라 해보기)
+This is my very first WeeklyRQuiz post.  
+(2018.03.week1 : path drawing.  일단 따라 해보기)
 
 [Link to WeeklyRQuiz site](https://github.com/R-Korea/weekly_R_quiz/tree/master/201803/1.path_drawing)
 
@@ -40,4 +40,23 @@ df <-
         185,312,411,533,116,224,124,501,235,452,212,153))
 ```
 
+```{r message = FALSE, warning = FALSE, tidy = TRUE}
+df %>%
+  ggplot(aes(x=avg.price, y=active.user, colour=class)) +
+  geom_path() +
+  geom_text(
+    aes(label=paste(comma(round(avg.price*active.user/10^4)),'만원')),
+    fontface='bold') +
+  geom_text(
+    aes(label=case_when(month == 1 ~ as.character(class), TRUE ~ '')), 
+    hjust=4, vjust=1, fontface='bold', size=7) +
+  theme_bw() +
+  theme(
+    title = element_text(face='bold'),
+    axis.title.y = element_text(angle=0), 
+    legend.position = 'none') +
+  scale_y_continuous(labels = function(x) paste(comma(x), '명'), limits = c(0,1200)) +
+  scale_x_continuous(labels = function(x) paste(comma(x), '원'), limits = c(0,4500)) +
+  labs(title='제품군별 고객수 객단가 추이', y='고객수', x='객단가')
+```
 
