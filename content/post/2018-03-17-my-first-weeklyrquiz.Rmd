@@ -55,7 +55,7 @@ df %>%
     title = element_text(face='bold'),
     axis.title.y = element_text(angle=0), 
     legend.position = 'none') +
-  scale_y_continuous(labels = function(x) paste(comma(x), 'count'), limits = c(0,1200)) +
+  scale_y_continuous(labels = function(x) paste(comma(x), 'ppl'), limits = c(0,1200)) +
   scale_x_continuous(labels = function(x) paste(comma(x), 'Won'), limits = c(0,4500)) +
   labs(title='unit price vs number of customers trend by product group', y='number of customers', x='unit price')
 ```
