@@ -1,0 +1,12 @@
+---
+title: my first WeeklyRQuiz
+author: normalct
+date: '2018-03-17'
+slug: my-first-weeklyrquiz
+categories:
+  - R
+tags:
+  - plot
+---
+
+This is my very first WeeklyRQuiz post.
